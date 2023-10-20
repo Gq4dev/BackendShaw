@@ -11,6 +11,12 @@ let data = [];
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+
+    res.json("Shaw Test Gq");
+
+});
+
 app.post('/api/files', upload.single('file'), (req, res) => {
     try {
         if (!req.file) {
