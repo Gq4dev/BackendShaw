@@ -10,12 +10,6 @@ let data = [];
 
 app.use(express.json());
 app.use(cors());
-app.get('/api', (req, res) => {
-    const path = `/api/${v4()}`;
-    res.setHeader('Content-Type', 'text/html');
-    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
-  });
 
 app.post('/api/files', upload.single('file'), (req, res) => {
     try {
